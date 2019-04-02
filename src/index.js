@@ -104,6 +104,7 @@ export default function loader(content, map, meta) {
               regExp: options.localIdentRegExp,
               hashPrefix: options.hashPrefix || '',
               context: options.context,
+              globalClassNames: options.globalClassNames || []
             }
           );
         },

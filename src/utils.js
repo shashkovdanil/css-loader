@@ -72,6 +72,10 @@ function getLocalIdent(loaderContext, localIdentName, localName, options) {
     options.context = loaderContext.rootContext;
   }
 
+  if (Array.isArray(options.globalClassNames) && options.globalClassNames.length > 0) {
+    if (options.globalClassNames.includes(localName)) return localName
+  }
+
   const request = normalizePath(
     path.relative(options.context || '', loaderContext.resourcePath)
   );
